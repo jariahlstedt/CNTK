@@ -323,7 +323,10 @@ public:
 
         auto outputs = m_externalFunction->Outputs();
         bool layoutNotInitialized = (m_pMBLayout == nullptr);
+        
+        InferMBLayoutFromInputsForStandardCase(isFinalValidationPass);
 
+        /*
         if (layoutNotInitialized)
         {
             bool matchingDynamicAxesFound = false;
@@ -388,7 +391,7 @@ public:
                 InferMBLayoutFromInputsForStandardCase(isFinalValidationPass);
             }
         }
-
+        */
         for (size_t i = 0; i < outputs.size(); ++i)
         {
             auto output = outputs[i];
